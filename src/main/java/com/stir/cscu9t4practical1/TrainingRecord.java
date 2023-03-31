@@ -16,7 +16,14 @@ public class TrainingRecord {
     
     // add a record to the list
    public void addEntry(Entry e){
-       tr.add(e);   
+       
+       if (tr.contains(e)) {
+           System.out.println("Duplicate entry found");
+       }
+       else {
+           tr.add(e);
+       }
+        
    } // addClass
    
    // look up the entry of a given day and month
@@ -53,12 +60,13 @@ public class TrainingRecord {
             Entry current = iter.next();
             if (current.getName().equals(n) && current.getDay() == d && current.getMonth() == m && current.getYear() == y) {
                 iter.remove();
+                System.out.println("Entry removed");
                 removed = true;
                 break;
             }
         }
         if (!removed) {
-            System.out.println("Failed");
+            System.out.println("Entry not found");
         }
     }
 

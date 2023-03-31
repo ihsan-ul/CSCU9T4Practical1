@@ -137,6 +137,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     public String addEntry(String what) {
         String message = "Record added\n";
         System.out.println("Adding "+what+" entry to the records");
+        
         String n = name.getText();
         int m = Integer.parseInt(month.getText());
         int d = Integer.parseInt(day.getText());
@@ -172,7 +173,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         {
             return "Select the sport";
         }
-        //return message;
+        
     }
     
     
