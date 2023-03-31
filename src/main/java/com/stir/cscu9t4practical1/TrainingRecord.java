@@ -16,7 +16,7 @@ public class TrainingRecord {
     
     // add a record to the list
    public void addEntry(Entry e){
-       tr.add(e);    
+       tr.add(e);   
    } // addClass
    
    // look up the entry of a given day and month
@@ -45,7 +45,23 @@ public class TrainingRecord {
    } else {
       return String.join("\n", entries);
    }
-}
+   }
+   public void removeEntry(String n, int d, int m, int y) {
+        ListIterator<Entry> iter = tr.listIterator();
+        boolean removed = false;
+        while (iter.hasNext()) {
+            Entry current = iter.next();
+            if (current.getName().equals(n) && current.getDay() == d && current.getMonth() == m && current.getYear() == y) {
+                iter.remove();
+                removed = true;
+                break;
+            }
+        }
+        if (!removed) {
+            System.out.println("Failed");
+        }
+    }
+
    
    // Count the number of entries
    public int getNumberOfEntries(){
